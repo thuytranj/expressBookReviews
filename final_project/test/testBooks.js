@@ -24,6 +24,19 @@ async function getDetailByIsbn(isbn) {
   }
 }
 
+async function getDetailByAuthor(author) {
+  try {
+    const detail = await axios.get(
+      `http://localhost:5001/author/${author}`
+    );
+
+    console.log("===================================");
+    console.log(detail.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function getDetailByTitle(title) {
   try {
     const detail = await axios.get(
@@ -42,5 +55,8 @@ async function getDetailByTitle(title) {
 // const isbn = 1
 // getDetailByIsbn(isbn)
 
-const title = "the"
-getDetailByTitle(title)
+const author = "unknown"
+getDetailByAuthor(author)
+
+// const title = "the"
+// getDetailByTitle(title)
