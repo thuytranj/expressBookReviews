@@ -2,9 +2,7 @@ const axios = require("axios");
 
 async function getBooks() {
   try {
-    const books = await axios.get(
-      "https://tranthuy0511-5000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/"
-    );
+    const books = await axios.get("http://localhost:5001/");
 
     console.log("===================================");
     console.log(books.data);
@@ -16,7 +14,7 @@ async function getBooks() {
 async function getDetailByIsbn(isbn) {
   try {
     const detail = await axios.get(
-      `https://tranthuy0511-5000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/isbn/${isbn}`
+      `http://localhost:5001/isbn/${isbn}`
     );
 
     console.log("===================================");
@@ -29,7 +27,7 @@ async function getDetailByIsbn(isbn) {
 async function getDetailByTitle(title) {
   try {
     const detail = await axios.get(
-      `https://tranthuy0511-5000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/title/${title}`
+      `http://localhost:5001/title/${title}`
     );
 
     console.log("===================================");
